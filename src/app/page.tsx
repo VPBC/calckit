@@ -1,65 +1,118 @@
-import Image from "next/image";
+import Link from "next/link";
+import type { Metadata } from "next";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "CalcKit — Free Construction & Home Improvement Calculators",
+  description:
+    "Calculate how much tile, concrete, paint, flooring, gravel, mulch, wallpaper, or drywall you need. Free, instant, accurate material estimates.",
+};
+
+const calculators = [
+  {
+    href: "/tile-calculator",
+    title: "Tile Calculator",
+    description: "How many tiles do you need? Enter room dimensions and tile size to get an exact count with waste allowance.",
+    icon: "🔲",
+  },
+  {
+    href: "/concrete-calculator",
+    title: "Concrete Calculator",
+    description: "Calculate cubic yards/meters of concrete for slabs, footings, columns, and steps.",
+    icon: "🧱",
+  },
+  {
+    href: "/paint-calculator",
+    title: "Paint Calculator",
+    description: "How many gallons or liters of paint do you need? Accounts for doors, windows, and coats.",
+    icon: "🎨",
+  },
+  {
+    href: "/flooring-calculator",
+    title: "Flooring Calculator",
+    description: "Estimate hardwood, laminate, or vinyl flooring needed for any room shape.",
+    icon: "🪵",
+  },
+  {
+    href: "/gravel-calculator",
+    title: "Gravel Calculator",
+    description: "Calculate tons of gravel, crushed stone, or sand for driveways, paths, and landscaping.",
+    icon: "⛰️",
+  },
+  {
+    href: "/mulch-calculator",
+    title: "Mulch Calculator",
+    description: "How many bags or cubic yards of mulch for your garden beds?",
+    icon: "🌿",
+  },
+  {
+    href: "/wallpaper-calculator",
+    title: "Wallpaper Calculator",
+    description: "Calculate rolls of wallpaper needed including pattern repeat waste.",
+    icon: "🖼️",
+  },
+  {
+    href: "/drywall-calculator",
+    title: "Drywall Calculator",
+    description: "Estimate drywall sheets, joint compound, and screws for walls and ceilings.",
+    icon: "📐",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="mx-auto max-w-5xl px-4 py-12">
+      <section className="text-center mb-12">
+        <h1 className="text-4xl font-bold mb-4">
+          Free Construction Calculators
+        </h1>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          Accurately estimate materials for your next project. No sign-up required. Instant results.
+        </p>
+      </section>
+
+      <section className="grid md:grid-cols-2 gap-6">
+        {calculators.map((calc) => (
+          <Link
+            key={calc.href}
+            href={calc.href}
+            className="block p-6 rounded-lg border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+            <div className="flex items-start gap-4">
+              <span className="text-3xl">{calc.icon}</span>
+              <div>
+                <h2 className="text-lg font-semibold text-gray-900">
+                  {calc.title}
+                </h2>
+                <p className="text-sm text-gray-600 mt-1">
+                  {calc.description}
+                </p>
+              </div>
+            </div>
+          </Link>
+        ))}
+      </section>
+
+      <section className="mt-16 prose prose-gray max-w-none">
+        <h2>Why Use CalcKit?</h2>
+        <p>
+          Ordering too much material wastes money. Ordering too little means extra trips
+          and project delays. CalcKit gives you accurate estimates in seconds so you buy
+          exactly what you need.
+        </p>
+        <h3>How Our Calculators Work</h3>
+        <p>
+          Enter your room or project dimensions, select your material, and get an instant
+          estimate including a recommended waste allowance. All calculations follow
+          industry-standard formulas used by professional contractors.
+        </p>
+        <h3>Trusted by DIYers and Professionals</h3>
+        <p>
+          Whether you&apos;re renovating a bathroom, building a patio, or planning a
+          commercial project, CalcKit helps you estimate materials quickly and accurately.
+          All calculators support both metric (meters, cm) and imperial (feet, inches)
+          measurements.
+        </p>
+      </section>
     </div>
   );
 }
