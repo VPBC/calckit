@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://calckit.app/sitemap.xml
+Sitemap: https://sitecalc.app/sitemap.xml

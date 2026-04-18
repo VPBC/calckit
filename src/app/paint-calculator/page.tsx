@@ -27,9 +27,9 @@ export default function PaintCalculator() {
   const netArea = Math.max(grossWallArea - deductions, 0);
   const totalArea = netArea * coats;
 
-  // Coverage: 1 gallon = 350 sq ft, 1 liter = 10 sq m
+  // Coverage: 1 gallon = 350 sq ft = ~32.5 sq m. 1 gallon = 3.785 liters.
   const gallons = unit === "ft" ? totalArea / 350 : (totalArea * 10.7639) / 350;
-  const liters = unit === "m" ? totalArea / 10 : totalArea / 37.16;
+  const liters = gallons * 3.785;
 
   return (
     <CalculatorShell

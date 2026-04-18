@@ -7,8 +7,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "CalcKit — Free Construction & Home Improvement Calculators",
-    template: "%s | CalcKit",
+    default: "SiteCalc — Free Construction & Home Improvement Calculators",
+    template: "%s | SiteCalc",
   },
   description:
     "Free online calculators for tiles, concrete, paint, flooring, and more. Get accurate material estimates for your construction and renovation projects.",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "CalcKit",
+    siteName: "SiteCalc",
   },
 };
 
@@ -50,7 +50,7 @@ export default function RootLayout({
         <header className="border-b border-gray-200 bg-white">
           <div className="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between">
             <Link href="/" className="text-xl font-bold text-blue-700">
-              CalcKit
+              SiteCalc
             </Link>
             <nav className="hidden md:flex gap-4 text-sm">
               {calculators.slice(0, 5).map((c) => (
@@ -83,7 +83,7 @@ export default function RootLayout({
               ))}
             </div>
             <p className="mt-6 text-xs text-gray-400">
-              &copy; {new Date().getFullYear()} CalcKit. Free construction calculators. Results are estimates — always verify with a professional.
+              &copy; {new Date().getFullYear()} SiteCalc. Free construction calculators. Results are estimates — always verify with a professional.
             </p>
           </div>
         </footer>

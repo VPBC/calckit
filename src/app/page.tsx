@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "CalcKit — Free Construction & Home Improvement Calculators",
+  title: "SiteCalc — Free Construction & Home Improvement Calculators",
   description:
     "Calculate how much tile, concrete, paint, flooring, gravel, mulch, wallpaper, or drywall you need. Free, instant, accurate material estimates.",
 };
@@ -93,10 +93,10 @@ export default function HomePage() {
       </section>
 
       <section className="mt-16 prose prose-gray max-w-none">
-        <h2>Why Use CalcKit?</h2>
+        <h2>Why Use SiteCalc?</h2>
         <p>
           Ordering too much material wastes money. Ordering too little means extra trips
-          and project delays. CalcKit gives you accurate estimates in seconds so you buy
+          and project delays. SiteCalc gives you accurate estimates in seconds so you buy
           exactly what you need.
         </p>
         <h3>How Our Calculators Work</h3>
@@ -108,7 +108,7 @@ export default function HomePage() {
         <h3>Trusted by DIYers and Professionals</h3>
         <p>
           Whether you&apos;re renovating a bathroom, building a patio, or planning a
-          commercial project, CalcKit helps you estimate materials quickly and accurately.
+          commercial project, SiteCalc helps you estimate materials quickly and accurately.
           All calculators support both metric (meters, cm) and imperial (feet, inches)
           measurements.
         </p>
